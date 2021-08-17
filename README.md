@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nextjs-course
 
-## Getting Started
+Vercel 連結：https://nextjs-course-beta.vercel.app/
 
-First, run the development server:
+跟隨著 Udemy 上的課程 Next.js & React - The Complete Guide (incl. Two Paths!) - 的 blog project 實作出來的網頁
+沒有其他客製化功能，只有稍微改了一點程式碼的架構
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# 從這個 project 上學到了什麼、程式碼架構改了什麼？
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1) 大略知道什麼時機適合用 Static Site Generation (SSG) 、 Server Side Rendering (SSR)
+   因為這個部落格主要會是由實作 project 的人自行撰寫文章的，文章的增減速度也不會到特別快
+   所以比較適合用 SSG，在跑 build 的時候就會提前為對應的 URL 建立網頁頁面。
+   反之如果用 SSR 的話就比較不適合了，因為不會有特別多的使用者發出用戶去操作這個網頁
+   使用者最多就可能會在 /contact 頁面傳遞資訊給部落客，但那些資訊並不會被渲染到網頁上
+   所以用 SSR 會變成 overkill
+   
+2) Next.js 是基於 React 上構建的 framework，可以透過 Next.js 撰寫 server-side (Node.js 環境) 邏輯
+   而在寫 component 的時候，都是經由 React.js 撰寫 client-side (瀏覽器環境) 的邏輯。
+   client-side 的邏輯並不利於 SEO，打開瀏覽器檢查網頁原始碼跟檢查的時候會發現檢查內的資訊跟原始碼內的 <div id='root'></div> 相差很多，
+   而 Google 在分析網頁資訊 SEO 的時候，往往都是在分析網頁原始碼，這就是為什麼會需要用 Next.js 來做 SEO。
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3) 學到了怎麼使用 Next.js 裡的 Image, Link, Head, Document
+   透過 Image 可以輕鬆完成 lazy-loading, 降低瀏覽器下載圖片的大小
+   透過 Link 可以完成類似於 react-router/link 的效果，能切換路由之餘，也可以設定使用者在 hover 到 Link 上時就預先讀取該頁面的資訊，相當的方便。
+   
+3) 在上傳這個 project 的時候，會
+   
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
