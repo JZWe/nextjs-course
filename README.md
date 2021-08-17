@@ -35,7 +35,9 @@ Vercel 連結：https://nextjs-course-beta.vercel.app/
    都分別包在了 /lib/api-util.js, /lib/client-util.js, /lib/input-valid.func.js 內並 export 出去，
    這樣在會使用到那些方法的 .js檔，就會比較好驗證邏輯有哪裡出錯。
    
-
+6) 我在本機端的專案資料夾內有設定一個 next.config.js 檔，用來管理跟 MongoDB 連結時會使用到的帳號、密碼等等的環境變數
+   這個檔案因為含有我個人的隱私資訊，所以並不適合出現到 GitHub 上，所以可以藉由在 Vercel 內設定環境變數來達成，
+   這樣隱私資訊就不會被直接暴露出去了。
   
 
 
